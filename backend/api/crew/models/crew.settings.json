@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "crews",
+  "info": {
+    "name": "crew",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stars": {
+      "via": "crews",
+      "collection": "star",
+      "dominant": true
+    },
+    "writers": {
+      "type": "string"
+    },
+    "movie": {
+      "via": "crew",
+      "model": "movie"
+    },
+    "directors": {
+      "via": "crews",
+      "collection": "director",
+      "dominant": true
+    },
+    "tv_sery": {
+      "via": "crew",
+      "model": "tv-series"
+    }
+  }
+}

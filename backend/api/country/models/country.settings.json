@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "countries",
+  "info": {
+    "name": "country",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "tv_series": {
+      "via": "countries",
+      "collection": "tv-series"
+    },
+    "movies": {
+      "via": "countries",
+      "collection": "movie"
+    }
+  }
+}

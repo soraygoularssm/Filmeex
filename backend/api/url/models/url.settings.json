@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "urls",
+  "info": {
+    "name": "url",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quality": {
+      "type": "enumeration",
+      "enum": [
+        "p240",
+        "p360",
+        "p480",
+        "p720",
+        "p1080",
+        "p2160"
+      ],
+      "default": "p720"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

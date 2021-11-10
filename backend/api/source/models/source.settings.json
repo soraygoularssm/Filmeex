@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sources",
+  "info": {
+    "name": "source",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "videos": {
+      "collection": "url"
+    },
+    "subtitles": {
+      "model": "url"
+    },
+    "audios": {
+      "model": "url"
+    }
+  }
+}

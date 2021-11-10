@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "directors",
+  "info": {
+    "name": "director",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "imdb_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "head_shot": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "crews": {
+      "via": "directors",
+      "collection": "crew"
+    },
+    "top_selected": {
+      "type": "boolean",
+      "default": false
+    },
+    "farsi_name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tv_series",
+  "info": {
+    "name": "tvSeries",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "imdb_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "free": {
+      "type": "boolean",
+      "default": false
+    },
+    "summary": {
+      "type": "text",
+      "required": true
+    },
+    "poster": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "rating": {
+      "model": "rating"
+    },
+    "countries": {
+      "via": "tv_series",
+      "collection": "country",
+      "dominant": true
+    },
+    "genres": {
+      "via": "tv_series",
+      "collection": "genre",
+      "dominant": true
+    },
+    "language": {
+      "type": "string"
+    },
+    "years": {
+      "type": "string"
+    },
+    "runtime": {
+      "type": "integer",
+      "default": 30
+    },
+    "seasons": {
+      "collection": "season"
+    },
+    "new": {
+      "type": "boolean",
+      "default": false
+    },
+    "top_selected": {
+      "type": "boolean",
+      "default": false
+    },
+    "crew": {
+      "model": "crew",
+      "via": "tv_sery"
+    }
+  }
+}

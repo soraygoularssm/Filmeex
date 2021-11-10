@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seasons",
+  "info": {
+    "name": "season",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "season_number": {
+      "type": "integer"
+    },
+    "episodes": {
+      "collection": "episode"
+    }
+  }
+}

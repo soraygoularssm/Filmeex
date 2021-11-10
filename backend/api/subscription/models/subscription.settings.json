@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subscriptions",
+  "info": {
+    "name": "subscription",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "paid",
+        "unpaid"
+      ]
+    },
+    "plan": {
+      "type": "enumeration",
+      "enum": [
+        "free",
+        "popular",
+        "plus"
+      ]
+    },
+    "expiration_date": {
+      "type": "date"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "subscription"
+    }
+  }
+}

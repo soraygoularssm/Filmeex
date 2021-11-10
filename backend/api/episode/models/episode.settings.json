@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "episodes",
+  "info": {
+    "name": "episode",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ep_number": {
+      "type": "integer"
+    },
+    "source": {
+      "model": "source"
+    }
+  }
+}

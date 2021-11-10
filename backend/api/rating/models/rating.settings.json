@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ratings",
+  "info": {
+    "name": "rating",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rate": {
+      "type": "float"
+    },
+    "rates_amount": {
+      "type": "biginteger"
+    }
+  }
+}

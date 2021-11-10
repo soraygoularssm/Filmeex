@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movies",
+  "info": {
+    "name": "movie",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "imdb_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "free": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "summary": {
+      "type": "text",
+      "required": true
+    },
+    "poster": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "rating": {
+      "model": "rating"
+    },
+    "countries": {
+      "via": "movies",
+      "collection": "country",
+      "dominant": true
+    },
+    "genres": {
+      "via": "movies",
+      "collection": "genre",
+      "dominant": true
+    },
+    "language": {
+      "type": "string"
+    },
+    "crew": {
+      "via": "movie",
+      "model": "crew"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "sources": {
+      "model": "source"
+    },
+    "budget": {
+      "type": "biginteger"
+    },
+    "new": {
+      "type": "boolean",
+      "default": false
+    },
+    "top_selected": {
+      "type": "boolean",
+      "default": false
+    },
+    "oscar": {
+      "type": "boolean",
+      "default": false
+    },
+    "runtime": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stars",
+  "info": {
+    "name": "star",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "imdb_id": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "crews": {
+      "via": "stars",
+      "collection": "crew"
+    },
+    "head_shot": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
